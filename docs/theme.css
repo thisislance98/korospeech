@@ -22,8 +22,10 @@
   --text-color-primary: #c1c9d2;
 }
 
-/* The logo image */
+/* The logo image 
 .theme-logo {
   content: var(--logo-url);
   margin: 20px;
 }
+
+*/
