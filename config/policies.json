@@ -52,6 +52,30 @@
       },
       "name": "delete-todo-request-validation-inbound",
       "policyType": "request-validation-inbound"
+    },
+    {
+      "handler": {
+        "export": "ApiKeyInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "cacheTtlSeconds": 60
+        }
+      },
+      "name": "api-key-inbound",
+      "policyType": "api-key-inbound"
+    },
+    {
+      "handler": {
+        "export": "ClerkJwtInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "frontendApiUrl": "https://clerk.korospeech.com"
+        }
+      },
+      "name": "clerk-jwt-auth-inbound",
+      "policyType": "clerk-jwt-auth-inbound"
     }
   ]
 }
